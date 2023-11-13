@@ -1,0 +1,130 @@
+---
+title: "Data transformation with dplyr"
+subtitle: "Practice with penguins"
+format: html
+editor_options: 
+  chunk_output_type: console
+editor: visual
+---
+
+```{r}
+#| label: load-packages
+library(palmerpenguins)
+library(dplyr)
+```
+
+All exercises in this assignment use the `penguins` data as a starting point. 
+
+1. Run the code chunk that contains `glimpse(penguins)`.
+2. How many variables are in the dataset?
+3. How many observations are in the dataset?
+
+```{r}
+glimpse(penguins)
+```
+
+
+## Task 1: Create a subset of the data using filter()
+
+Use `filter()` to create a subset from `penguins` that only contains observations for Adelie penguins.
+
+```{r}
+
+```
+
+Use `filter()` to create a subset from `penguins` that only contains observations where body mass is less than or equal to 2900 g.
+
+```{r}
+
+```
+
+Use `filter()` to create a subset from `penguins` that only contains observations for Adelie penguins with a bill length greater than 40 mm.
+
+```{r}
+
+```
+
+Use `filter()` to create a subset from `penguins` that excludes observations for chinstraps.
+
+```{r}
+
+```
+
+Use `filter()` to create a subset from `penguins` that only contains gentoo penguins with a bill depth greater than or equal to 15.5 millimeters.
+```{r}
+
+```
+
+
+Use `filter()` to create a subset from `penguins` that contains observations for male penguins recorded at Dream and Biscoe Islands.
+
+Use `filter()` to create a subset from `penguins` that contains observations for female Adelie penguins with bill lengths less than 35 mm.
+
+Use `filter()` to create a subset from `penguins` containing observations for female chinstrap penguins on Dream and Torgersen Islands.
+
+Use `filter()` to create a subset from `penguins` that contains penguins that are either gentoos OR have a body mass greater than 4500 g.
+
+
+## Task 2: Add new columns with mutate()
+
+Add a column to `penguins` that contains a new column `flipper_m`, which is the `flipper_length_mm` (flipper length in millimeters) converted to units of meters.
+
+```{r}
+
+```
+
+Add a new column to `penguins` that contains a new column `body_mass_kg`, which is the `body_mass_g` (body mass in grams) converted to units of kilograms.
+
+```{r}
+
+```
+
+Add a new column to `penguins` that contains a new column `bill_ratio`, which is the ratio of bill length to bill depth.
+
+```{r}
+
+```
+
+Add a new column to `penguins` with a sequence of values from 1 to the length of the data frame.
+
+```{r}
+
+```
+
+## Task 3: Summarize data with group_by() and summarize() & count()
+
+Starting with `penguins`, group the data by species , then create a summary table containing the maximum and minimum length of flippers (call the columns flip_max and flip_min). How will you handle NA values?
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  summarize(flip_max = max(flipper_length_mm), 
+            flip_min = min(flipper_length_mm))
+
+```
+
+Starting with `penguins`, group the data by species and year, then create a summary table containing the mean bill depth (call this bill_depth_mean) and mean bill length (call this bill_length_mean) for each group.
+
+```{r}
+
+penguins |> 
+  group_by(species, year) |> 
+  summarize(bill_depth_mean = mean(bill_depth_mm), 
+            bill_length_mean = mean(bill_length_mm))
+
+
+```
+
+Use the `count()` function to count the number of observations for each species in `penguins`.
+
+```{r}
+
+```
+
+Use the `count()` function to count the number of observations for each species and island in `penguins`.
+
+```{r}
+
+
+```
+
