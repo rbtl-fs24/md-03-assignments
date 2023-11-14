@@ -1,10 +1,15 @@
 ---
 title: "Data transformation with dplyr"
 subtitle: "Practice with penguins"
-format: html
+author: ""
+format:
+  html:
+    embed-resources: true
+editor: visual
+execute:
+  warning: false
 editor_options: 
   chunk_output_type: console
-editor: visual
 ---
 
 ```{r}
