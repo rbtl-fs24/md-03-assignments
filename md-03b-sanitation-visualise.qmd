@@ -62,7 +62,7 @@ sanitation <- read_csv("data/jmp_wld_sanitation_long.csv")
 
 1.  Use the `filter()` function to create a subset of the data set that only contains observations:
 
--   for the country you live or work in,
+-   for a country of your choice,
 -   for the year 2000 and 2020,
 -   for all variables that are not "safely managed sanitation services".
 
@@ -156,4 +156,4 @@ Once you have ensured that the Quarto document renders without errors and you ha
 4.  Click on the "Issues" tab.
 5.  Click on the green "New issue" button.
 6.  In the "Title" field write: "Completed module 3 assignments".
-7.  In the "Leave a comment" field, tag the course instructors @larnsce @mianzg @sskorik01 and ask some questions, if you like.
+7.  In the "Leave a comment" field, tag the course instructors @larnsce and ask some questions, if you like.
